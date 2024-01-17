@@ -1,1 +1,1 @@
-# lords_finance
+# lords_capital_and_finanace is now onnn
