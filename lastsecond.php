@@ -1,10 +1,5 @@
-<?php 
-session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
- ?>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +8,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <style>
     body{
-        /* background-color: #dbf1f0; */
+        background-color: #dbf1f0;
+        
     }
     .navi{
         /* border-radius: 40px; */
@@ -104,49 +100,110 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     margin: 9px 0px 0px -415px;
     }
 
-    .himg{
-        margin-top: 47px;
-        width: 34%;
-    }
-    .himages{
-        text-align: center;
+
+    .bgpic{
+        width: 47%;
+        margin: 135px 0px 0px 40px;
     }
 
-    .himg3{
-        margin-top: -500px;
-        width: 32%;
+    .quo1{
+        font-size: 80px;
+        font-weight: bold;
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+        float: right;
+        margin: -433px 100px 0px 0px;
+        color: #131313;
+    background-color: #e7e5e4;
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #767676, 
+      -1px 2px 1px #737272, 
+      -2px 4px 1px #767474, 
+      -3px 6px 1px #787777, 
+      -4px 8px 1px #7b7a7a, 
+      -5px 10px 1px #7f7d7d, 
+      -6px 12px 1px #828181, 
+      -7px 14px 1px #868585, 
+      -8px 16px 1px #8b8a89, 
+      -9px 18px 1px #8f8e8d, 
+      -10px 20px 1px #949392, 
+      -11px 22px 1px #999897, 
+      -12px 24px 1px #9e9c9c, 
+      -13px 26px 1px #a3a1a1, 
+      -14px 28px 1px #a8a6a6, 
+      -15px 30px 1px #adabab, 
+      -16px 32px 1px #b2b1b0, 
+      -17px 34px 1px #b7b6b5, 
+      -18px 36px 1px #bcbbba, 
+      -19px 38px 1px #c1bfbf, 
+      -20px 40px 1px #c6c4c4, 
+      -21px 42px 1px #cbc9c8, 
+      -22px 44px 1px #cfcdcd, 
+      -23px 46px 1px #d4d2d1, 
+      -24px 48px 1px #d8d6d5, 
+      -25px 50px 1px #dbdad9, 
+      -26px 52px 1px #dfdddc, 
+      -27px 54px 1px #e2e0df, 
+      -28px 56px 1px #e4e3e2;
     }
-    .himages3{
-        text-align: center;
+    .quo2{
+        font-size: 60px;
+        font-weight: bold;
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        float: right;
+        margin: -260px 100px 0px 0px;
+        color: #131313;
+    background-color: #e7e5e4;
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #767676, 
+      -1px 2px 1px #737272, 
+      -2px 4px 1px #767474, 
+      -3px 6px 1px #787777, 
+      -4px 8px 1px #7b7a7a, 
+      -5px 10px 1px #7f7d7d, 
+      -6px 12px 1px #828181, 
+      -7px 14px 1px #868585, 
+      -8px 16px 1px #8b8a89, 
+      -9px 18px 1px #8f8e8d, 
+      -10px 20px 1px #949392, 
+      -11px 22px 1px #999897, 
+      -12px 24px 1px #9e9c9c, 
+      -13px 26px 1px #a3a1a1, 
+      -14px 28px 1px #a8a6a6, 
+      -15px 30px 1px #adabab, 
+      -16px 32px 1px #b2b1b0, 
+      -17px 34px 1px #b7b6b5, 
+      -18px 36px 1px #bcbbba, 
+      -19px 38px 1px #c1bfbf, 
+      -20px 40px 1px #c6c4c4, 
+      -21px 42px 1px #cbc9c8, 
+      -22px 44px 1px #cfcdcd, 
+      -23px 46px 1px #d4d2d1, 
+      -24px 48px 1px #d8d6d5, 
+      -25px 50px 1px #dbdad9, 
+      -26px 52px 1px #dfdddc, 
+      -27px 54px 1px #e2e0df, 
+      -28px 56px 1px #e4e3e2;
     }
+    .line{
+        font-size: 20px;
+        float: right;
+        margin: -95px 135px 0px 0px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-shadow: 0 0 10px rgb(39 102 237), 0 0 20px rgb(255 255 255), 0 0 30px rgb(253 255 252);
+}
+    
 
-    .himg2{
-       margin: -330px 0px 0px 698px;
-        width: 7%;
-        display: block;
-    }
-    .caption{
-        font-family: verdana;
-        text-align: center;
-        color: #76755E;
-    }
-    .sub_cap{
-        color:#FF8206;
-    }
-    .caption_down{
-        font-size: 22px;
-        text-align: center;
-        font-family: cursive;
-        margin-top: -1px;
-    }
-
-
-
-
-
-    .container {
+.container {
       width: 82%;
-      margin: 8% 10%;
+      margin: -1% 10%;
       overflow: hidden;
     }
     .head{
@@ -167,12 +224,12 @@ animation: underline 2s infinite;
         /* background-color: #dbf1f0; */
       /* background-color: #ffffff; */
       padding: 20px;
-      margin-top: 10px;
+      margin-top: 200px;
       border-radius: 10px;
       box-shadow: 0px 0px 10px 0px #e1481e;
     }
     form:hover{
-        background-color: #dbf1f0;
+        background-color: #d4e2f3;
     }
 
     label {
@@ -208,9 +265,16 @@ animation: underline 2s infinite;
     input[type="submit"]:hover {
       background-color: black;
     }
+    #inf{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+    #next{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+} 
 
 
-    .footer-distributed{
+.footer-distributed{
   background: #666;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -407,13 +471,6 @@ animation: underline 2s infinite;
 .footer-icons{
   display:flex;
 }
-#inf{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-#next{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-}
 </style>
 <body>
     <div>
@@ -425,7 +482,7 @@ animation: underline 2s infinite;
            
             <ul class="navbar">
                 <li class="h"><a href="homepage1.php">Home</a></li>
-                <li><a href="emi_calculator.html">EMI Calculator</a></li>
+                <!-- <li><a href="webskills2.html">EMI Calculator</a></li> -->
                
                 <!-- <li><a href="webabout4.html">About</a></li> -->
                 <!-- <a href="mainpage.html"><button class="button">Sign In</button></a> -->
@@ -436,117 +493,113 @@ animation: underline 2s infinite;
          </nav>
      </div>
      <div>
-      
      </div>
      <hr>
-    <div class="himages">
-        <img class="himg" src="himg.png" alt="img">
-    </div>
-    <div class="himages3">
-        <img class="himg3" src="himg3.png" alt="himg3">
-        <img class="himg2" src="himg2.gif" alt="himg2">
-    </div>
-    
-    <div class="caption">
-        <h1>||  LORD's ARE BEST <span class="sub_cap">MONEY</span> LENDERS  ||</h1>
-    </div>
-    <h6 class="caption_down">
-        Because Your Financial Priorities Are Our Priorities
-    </h6>
 
+        <div>
+            <img class="bgpic" src="bgpic.png" alt="bgpic">
+        </div>
+        <div class="quo">
+            <p class="quo1">Mann hai,</p>
+            <p class="quo2">toh money hai</p>
+        </div>
 
+        <div class="line">
+            --- Best Money Lending service Made Just For You ---
+        </div>
 
-    <div class="container">
-        <form action="connect.php" method="post">
+        <div class="container">
+        <form action="connect_lastsecond.php" method="post">
             <h2 class="head">BORROWER INFORMATION</h2>
-          <label for="name" id="inf">First Name:</label>
-          <input type="text" id="firstname" name="firstname" required>
+          <label for="loanamount" id="inf">Loan Amount: </label>
+          <input type="text" id="loanamount" name="loanamount" required>
 
-          <label for="name" id="inf">Last Name:</label>
-          <input type="text" id="lastname" name="lastname" required>
-      
-          <label for="address" id="inf">Address:</label>
-          <input type="text" id="address" name="address"  required>
-      
-          <label for="gender" id="inf">Gender:</label>
-          <select id="gender" name="gender" required>
-          <option value="Male"  name="gender">Male</option>
-            <option value="Female"  name="gender">Female</option>
-            <option value="Other" name="gender">Other</option>
+          <label for="purpose" id="inf">Purpose of Loan: </label>
+          <input type="text" id="purpose" name="purpose" required>
+
+          <label for="duration" id="inf">Loan Duration (In Months):</label>
+          <input type="text" id="duration" name="duration"  required>
+
+          <label for="etype" id="inf">Employement Type: </label>
+          <select id="etype" name="etype" required>
+            <option value="Salaried"  name="etype">Salaried</option>
+          <option value="Self Employed"  name="etype">Self Employed</option>
           </select>
       
-          <label for="email" id="inf">Email:</label>
-          <input type="email" id="email" name="email" required>
       
-          <input id="next" type="submit" value="NEXT &#8680;">
+          <label for="income" id="inf">Monthly Income:</label>
+          <input type="text" id="income" name="income"  required>
+
+          <label for="interest" id="inf">Interest Rate:</label>
+          <select id="interest" name="interest" required>
+          <option value="12%"  name="interest">12%</option></select>
+          <p>Note: If any wrong information is found your application will be not approved for the loan</p>
+          <p>Note: Read all terms and conditions carefully before submitting the application</p>
+          
+          <input id="next" type="submit" value="SUBMIT ">
         </form>
-      </div>
-
-
-
-
-      <footer class="footer-distributed">
-
-      <div class="footer-left">
-
-        <h3>LORD'S<span> Captial & Finance</span></h3>
-
-        <p class="footer-links">
-          <a href="homepage1.php" class="link-1">Home</a>
-          
-         
-          
-          <a href="contactpage.html">Contact</a>
-        </p>
-
-      
-      </div>
-
-      <div class="footer-center">
-
-        <div>
-          <i class="fa fa-map-marker"></i>
-          <p><span>Mundhwa - Kharadi Rd,</span> Amanora Park Town, Hadapsar, Pune</p>
         </div>
 
-        <div>
-          <i class="fa fa-phone"></i>
-          <p>+91-83083 26267</p>
-        </div>
 
-        <div>
-          <i class="fa fa-envelope"></i>
-          <p><a href="mailto:pratappawar8698567744@gmail.com">Lordscapital&finance@company.com</a></p>
-        </div>
+        <footer class="footer-distributed">
 
-      </div>
+<div class="footer-left">
 
-      <div class="footer-right">
+  <h3>LORD'S<span> Captial & Finance</span></h3>
 
-        <p class="footer-company-about">
-          <span>About the company</span>
-          A new age lending company that strives to “make lending Money smarter
-        </p>
+  <p class="footer-links">
+    <a href="homepage1.php" class="link-1">Home</a>
+    
+    
+    
+    <a href="contactpage.html">Contact</a>
+  </p>
 
-        <div class="footer-icons">
 
-          <a href="https://www.instagram.com/_pratap_2.0?igsh=OGQ5ZDc2ODk2ZA=="><img class="insta" src="insta.png" alt=""></a>
-          <a href="https://www.facebook.com/pratap.pawar.712714"><img class="insta" src="facebook.png" alt=""></a>
-          <a href="#"><img class="insta" src="linkedin.png" alt=""></a>
-          <a href="https://x.com/_Pratap_7744?t=NrsdsdA4PejmZ-NP_921UQ&s=09"><img class="insta" src="twitter.png" alt=""></a>
+</div>
 
-        </div>
+<div class="footer-center">
 
-      </div>
+  <div>
+    <i class="fa fa-map-marker"></i>
+    <p><span>Mundhwa - Kharadi Rd,</span> Amanora Park Town, Hadapsar, Pune</p>
+  </div>
 
-    </footer>
+  <div>
+    <i class="fa fa-phone"></i>
+    <p>+91-83083 26267</p>
+  </div>
+
+  <div>
+    <i class="fa fa-envelope"></i>
+    <p><a href="mailto:pratappawar8698567744@gmail.com">Lordscapital&finance@company.com</a></p>
+  </div>
+
+</div>
+
+<div class="footer-right">
+
+  <p class="footer-company-about">
+    <span>About the company</span>
+    A new age lending company that strives to “make lending Money smarter
+  </p>
+
+  <div class="footer-icons">
+
+    <a href="https://www.instagram.com/_pratap_2.0?igsh=OGQ5ZDc2ODk2ZA=="><img class="insta" src="insta.png" alt=""></a>
+    <a href="https://www.facebook.com/pratap.pawar.712714"><img class="insta" src="facebook.png" alt=""></a>
+    <a href="#"><img class="insta" src="linkedin.png" alt=""></a>
+    <a href="https://x.com/_Pratap_7744?t=NrsdsdA4PejmZ-NP_921UQ&s=09"><img class="insta" src="twitter.png" alt=""></a>
+
+  </div>
+
+</div>
+
+
+
+        
+</footer>
 </body>
 </html>
 
 
-<?php 
-}else{
-     header("Location: index.php");
-     exit();
-}
- ?>

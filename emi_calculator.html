@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #c6dbe9;
+    font-size: 1.2rem;
+    font-family: 'Poppins',sans-serif;
+}
+.main{
+    width: 350px;
+    background-color: #fff;
+    padding: 30px 30px;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+    font-weight: 600;
+}
+.input{
+    text-align: center;
+}
+.main input{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    outline: none;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 10px 10px;
+}.button{
+    text-align: center;
+}
+.main button{
+    border: none;
+    background-color: #3598DB;
+    border-radius: 5px;
+    padding: 15px 15px;
+    color: #fff;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    width: 200px;
+    cursor: pointer;
+}
+.error{
+    text-align: center;
+    background-color: #fedfe1;
+    color: #cd4243;
+    margin-top: 1rem;
+    padding: 15px 0px;
+    border-radius: 5px;
+    display: none;
+}
+.result{
+    display: none;
+}
+#loanChart{
+    width: 240px!important;
+    height: 240px!important;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+ul{
+    background-color: #d6f0fd;
+    color: #44bef4;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+ul li{
+    list-style: none;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="main">
+            <h2>EMI Calculator</h2>
+            <div class="input-group">
+                <div class="input">
+                    <input type="text" id="loan-amount" placeholder="Loan Amount(Rs.)">
+                </div>
+                <div class="input">
+                    <input type="text" id="loan-tenure" placeholder="Loan Tenure(Year.)">
+                </div>
+                <div class="input">
+                    <input type="text" id="loan-interest" placeholder="Interest Rate(%)">
+                </div>
+            </div>
+            <div class="button">
+                <button id="calcbtn" onclick="calculate()">Calculate</button>
+            </div>
+            <p class="error">this is error</p>
+            <div class="result">
+                <canvas id="loanChart"></canvas>
+                <ul>
+                    <li>Monthly Loan EMI: <span id="loanemi"></span></li>
+                    <li>Principle Amount: <span id="loanprinciple"></span></li>
+                    <li>Loan On Interest: <span id="loaninterest"></span></li>
+                    <li>Total Amount To Be Paid: <span id="loantotal"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const loanAmount = document.getElementById("loan-amount");
+const loanTenure = document.getElementById("loan-tenure");
+const loanRate = document.getElementById("loan-interest");
+const loanEmi = document.getElementById("loanemi");
+const loanPrinciple = document.getElementById("loanprinciple");
+const loanTotal = document.getElementById("loantotal");
+const loanInterest = document.getElementById("loaninterest");
+let submitBtn = document.getElementById("calcbtn");
+let error = document.querySelector(".error");
+let result = document.querySelector(".result");
+
+function calculate(){
+    if(loanAmount.value == '' || loanTenure.value == '' || loanRate.value == ''){
+        error.style.display = "block";
+        error.innerHTML = "Please Fill All The Fields";
+        setTimeout(()=>{
+            error.style.display = "none";
+        },2000)
+    }else{
+        calculateEmi();
+    }
+}
+function calculateEmi(){
+    amount = loanAmount.value;
+    tenure = loanTenure.value*12; //1year = 12months;
+    rate = loanRate.value/12/100; //loan rate per year/100 = loan percentage
+    emi = (amount*rate*(1+rate)**tenure)/((1+rate)**tenure-1);
+    total = emi*tenure; //total amount to be paid including interest
+    interest = total-amount; //interest = total amount - principle amount
+    result.style.display = "Block";
+    document.querySelector(".container").style.height = "100%";
+    loanEmi.innerHTML = Math.floor(emi);
+    loanPrinciple.innerHTML = Math.floor(amount);
+    loanTotal.innerHTML = Math.floor(total);
+    loanInterest.innerHTML = Math.floor(interest);
+
+    //displaying pie chart that describe the details
+    let xValues = ["Principles","Interest"];
+    let yValues = [amount,Math.floor(interest)];
+    let barColors = ["#3598DB","#d6f0fd"];
+
+    new Chart("loanChart",{
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets:[
+                {
+                    backgroundColor: barColors,
+                    data: yValues
+                }
+            ]
+        },
+        options: {
+            title: {
+                display: false
+            }
+        }
+    })
+}
+    </script>
+</body>
+</html>

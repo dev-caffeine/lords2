@@ -1,19 +1,15 @@
-<?php 
-session_start();
-
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
 </head>
 <style>
-    body{
+      body{
         /* background-color: #dbf1f0; */
+        /* background-color: red; */
+        background-color: #e4e4e4;
     }
     .navi{
         /* border-radius: 40px; */
@@ -103,114 +99,41 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     height: 50px;
     margin: 9px 0px 0px -415px;
     }
-
-    .himg{
-        margin-top: 47px;
-        width: 34%;
+    .tick{
+        width: 22%;
+        margin: 90px 0px 0px 595px;
+       
     }
-    .himages{
+    .greet{
+        font-size: 50px;
         text-align: center;
+        font-family: Verdana;
+        font-weight: bold;
     }
-
-    .himg3{
-        margin-top: -500px;
-        width: 32%;
-    }
-    .himages3{
+    .line1{
+        margin-top: -10px;
         text-align: center;
+        font-family: Verdana;
+        font-size: 33px;
     }
-
-    .himg2{
-       margin: -330px 0px 0px 698px;
-        width: 7%;
-        display: block;
+    .bttn{
+      background-color: rgb(138, 17, 244);
+        color: white;
+        font-weight: bold;
+        font-size: medium;
+        margin: 10px 277px 0px 337px;
+        border-radius: 6px;
+        padding: 14px 14px;
+        cursor: pointer;
     }
-    .caption{
-        font-family: verdana;
-        text-align: center;
-        color: #76755E;
-    }
-    .sub_cap{
-        color:#FF8206;
-    }
-    .caption_down{
-        font-size: 22px;
-        text-align: center;
-        font-family: cursive;
-        margin-top: -1px;
-    }
+    .bttn:hover:nth-child(1){
+            transform: scale(1.1);
+        }
+        .bttn:hover:nth-child(2){
+            transform: scale(1.1);
+        }
 
-
-
-
-
-    .container {
-      width: 82%;
-      margin: 8% 10%;
-      overflow: hidden;
-    }
-    .head{
-
-        text-align: center;
-        margin: 35px 0px;
-        /* color:blueviolet; */
-        text-decoration: underline;
-animation: underline 2s infinite;
-@keyframes underline {
-  to {
-    width: 100%;
-  }
-}
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    form {
-        /* background-color: #dbf1f0; */
-      /* background-color: #ffffff; */
-      padding: 20px;
-      margin-top: 10px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px 0px #e1481e;
-    }
-    form:hover{
-        background-color: #dbf1f0;
-    }
-
-    label {
-      display: block;
-      margin: 8px 0;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      border-radius: 5px;
-    }
-
-    input[type="submit"] {
-      width: 100%;
-      background-color: blueviolet;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    input[type="submit"]:hover {
-      background-color: black;
-    }
-
-
-    .footer-distributed{
+        .footer-distributed{
   background: #666;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -406,95 +329,55 @@ animation: underline 2s infinite;
 }
 .footer-icons{
   display:flex;
-}
-#inf{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-#next{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
+
 }
 </style>
 <body>
-    <div>
-        <nav class="navi">
-            <div class="logo">
-             <p>LORD'S</p>
-             <p class="cap">CAPITAL AND FINANCE</p>
-            </div>
-           
-            <ul class="navbar">
-                <li class="h"><a href="homepage1.php">Home</a></li>
-                <li><a href="emi_calculator.html">EMI Calculator</a></li>
-               
-                <!-- <li><a href="webabout4.html">About</a></li> -->
-                <!-- <a href="mainpage.html"><button class="button">Sign In</button></a> -->
-                <!-- <a href="#"><button class="bttn">Log In</button></a> -->
-                
-             </ul>
-             <div> <img class="log" src="logo.png" alt="logo"></div>
-         </nav>
-     </div>
-     <div>
-      
-     </div>
-     <hr>
-    <div class="himages">
-        <img class="himg" src="himg.png" alt="img">
-    </div>
-    <div class="himages3">
-        <img class="himg3" src="himg3.png" alt="himg3">
-        <img class="himg2" src="himg2.gif" alt="himg2">
-    </div>
-    
-    <div class="caption">
-        <h1>||  LORD's ARE BEST <span class="sub_cap">MONEY</span> LENDERS  ||</h1>
-    </div>
-    <h6 class="caption_down">
-        Because Your Financial Priorities Are Our Priorities
-    </h6>
+<div>
+    <nav class="navi">
+        <div class="logo">
+         <p>LORD'S</p>
+         <p class="cap">CAPITAL AND FINANCE</p>
+        </div>
+       
+        <ul class="navbar">
+            <li class="h"><a href="homepage1.php">Home</a></li>
+            <!-- <li><a href="webskills2.html">Skills</a></li>
+            <li><a href="webabout4.html">About</a></li> -->
+            <!-- <a href="index.php"><button class="button">Login</button></a> -->
+            <!-- <a href="#"><button class="bttn">Log In</button></a> -->
+            
+         </ul>
+         <div> <img class="log" src="logo.png" alt="logo"></div>
+     </nav>
+ </div>
+ <div>
+  
+   </div>
+   <hr>
 
+   <div>
+        <img class="tick" src="greentick.png" alt="greentick">
+   </div>
+   <div>
+        <p class="greet">
+            CONGRATULATIONS!
+        </p>
+        <p class="line1">YOUR APPLICATION HAS BEEN SUCCESSFULLY SUBMITTED</p>
+   </div>
+   <div>
+            <a href="homepage1.php"><button class="bttn">Back to Home</button></a>
+           <a href="whatsnext.php"> <button class="bttn">What's Next?</button></a>
+   </div>
 
-
-    <div class="container">
-        <form action="connect.php" method="post">
-            <h2 class="head">BORROWER INFORMATION</h2>
-          <label for="name" id="inf">First Name:</label>
-          <input type="text" id="firstname" name="firstname" required>
-
-          <label for="name" id="inf">Last Name:</label>
-          <input type="text" id="lastname" name="lastname" required>
-      
-          <label for="address" id="inf">Address:</label>
-          <input type="text" id="address" name="address"  required>
-      
-          <label for="gender" id="inf">Gender:</label>
-          <select id="gender" name="gender" required>
-          <option value="Male"  name="gender">Male</option>
-            <option value="Female"  name="gender">Female</option>
-            <option value="Other" name="gender">Other</option>
-          </select>
-      
-          <label for="email" id="inf">Email:</label>
-          <input type="email" id="email" name="email" required>
-      
-          <input id="next" type="submit" value="NEXT &#8680;">
-        </form>
-      </div>
-
-
-
-
-      <footer class="footer-distributed">
+   <footer class="footer-distributed">
 
       <div class="footer-left">
 
         <h3>LORD'S<span> Captial & Finance</span></h3>
 
         <p class="footer-links">
-          <a href="homepage1.php" class="link-1">Home</a>
-          
-         
+          <a href="homepage1.html" class="link-1">Home</a>
           
           <a href="contactpage.html">Contact</a>
         </p>
@@ -540,13 +423,5 @@ animation: underline 2s infinite;
       </div>
 
     </footer>
-</body>
+   </body>
 </html>
-
-
-<?php 
-}else{
-     header("Location: index.php");
-     exit();
-}
- ?>

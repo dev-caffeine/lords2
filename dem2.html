@@ -1,0 +1,236 @@
+<!-- HTML !-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+.button-40 {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  }
+
+.button-40::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.button-40:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+.button-40:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+
+
+
+
+.button-60 {
+  transform: rotate(-25deg) skew(25deg);
+  transform-style: preserve-3d;
+  position: relative;
+  list-style: none;
+  width: 100px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.button-60:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -5px;
+  width: 100%;
+  height: 10px;
+  background: #2a2a2a;
+  transform: skewX(-41deg);
+}
+
+.button-60:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -9px;
+  width: 9px;
+  height: 100%;
+  background: #2a2a2a;
+  transform: skewY(-49deg);
+}
+
+.button-60 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1.1s ease-out;
+}
+
+.button-60:hover span {
+  z-index: 1000;
+  transition: .3s;
+  color: #fff;
+}
+
+.button-60:hover span:nth-child(5) {
+  transform: translate(40px, -40px);
+  opacity: 1;
+}
+
+.button-60:hover span:nth-child(4) {
+  transform: translate(30px, -30px);
+  opacity: .8;
+}
+
+.button-60:hover span:nth-child(3) {
+  transform: translate(20px, -20px);
+  opacity: .6;
+}
+
+.button-60:hover span:nth-child(2) {
+  transform: translate(10px, -10px);
+  opacity: .4;
+}
+
+.button-60:hover span:nth-child(1) {
+  transform: translate(0px, 0px);
+  opacity: .2;
+}
+
+.button-60:active span:nth-child(5) {
+  transform: translate(20px, -20px);
+  opacity: 1;
+}
+
+.button-60:active span:nth-child(4) {
+  transform: translate(15px, -15px);
+}
+
+.button-60:active span:nth-child(3) {
+  transform: translate(10px, -10px);
+}
+
+.button-60:active span:nth-child(2) {
+  transform: translate(5px, -5px);
+}
+
+.button-60:active span:nth-child(1) {
+  transform: translate(0px, 0px);
+}
+
+.button-60:nth-child(1):hover span {
+  background: #52E19F;
+}
+
+
+
+.box {
+  background: linear-gradient(to right, rgb(255, 102, 0), darkorange);
+  color: white;
+  --width: 250px;
+  --height: calc(var(--width) / 3);
+  width: var(--width);
+  height: var(--height);
+  text-align: center;
+  line-height: var(--height);
+  font-size: calc(var(--height) / 2.5);
+  font-family: sans-serif;
+  letter-spacing: 0.2em;
+  border: 1px solid rgb(181, 17, 6);
+  border-radius: 2em;
+  transform: perspective(500px) rotateY(-15deg);
+  text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.box:hover {
+  transform: perspective(500px) rotateY(15deg);
+  text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, white, transparent);
+  left: -100%;
+  transition: 0.5s;
+}
+
+.box:hover::before {
+  left: 100%;
+}
+</style>
+<body>
+  <button class="button-40" role="button">
+    <span class="text">Button 40</span>
+  </button>
+
+
+  <button class="button-60" role="button">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="text">Button 60</span>
+  </button>
+  
+  <div class="box">BUTTON</div>
+</body>
+</html>
+
+
+
+<!-- HTML !-->
+
+

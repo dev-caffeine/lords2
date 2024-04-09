@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #66c0d0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 250px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.info {
+  text-align: center;
+}
+
+.info img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.info p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.social-links li {
+  display: inline;
+}
+
+.social-links li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-links li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+
+
+
+
+.footer-distributed{
+  background: #666;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  margin-top: 70px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: bold 36px verdana;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 35px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  font-weight:700;
+  text-decoration: none;
+  font-size: 17px;
+  color:  inherit;
+  padding: 10px;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  font-weight:400;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  lightseagreen;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* .footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+} */
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+
+
+.insta{
+  width: 35%;
+    float: right;
+    margin: 34px 40px 0px 0px;
+    background-color: rgb(24 203 180);
+    border-radius: 60px;
+    padding: 14px;
+}
+.footer-icons{
+  display:flex;
+}
+</style>
+<body>
+<div class="container">
+  <h1>Contact Us</h1>
+  <div class="contact-info">
+    <div class="info">
+      <img src="viber_152851.png" alt="Phone">
+      <p>Phone: +91-8308326267</p>
+    </div>
+    <div class="info">
+      <img src="email_542689.png"Email">
+      <p><a href="mailto:pratappawar8698567744@gmail.com">Email:pratappawar8698567744@gmail.com</a> </p>
+    </div>
+    <div class="info">
+      <img src="85007-200.png" alt="Social Media">
+      <p>Follow us on social media:</p>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com/pratap.pawar.712714">Facebook</a></li>
+        <li><a href="https://x.com/_Pratap_7744?t=NrsdsdA4PejmZ-NP_921UQ&s=09">Twitter</a></li>
+        <li><a href="https://www.instagram.com/_pratap_2.0?igsh=OGQ5ZDc2ODk2ZA==">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>LORD'S<span> Captial & Finance</span></h3>
+
+      <p class="footer-links">
+        <a href="homepage1.php" class="link-1">Home</a>
+        
+        <a href="#">Blog</a>
+      
+        <a href="#">Pricing</a>
+      
+        <a href="#">About</a>
+        
+        <a href="#">Faq</a>
+        
+        <a href="contactpage.html">Contact</a>
+      </p>
+
+    
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Mundhwa - Kharadi Rd,</span> Amanora Park Town, Hadapsar, Pune</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+91-83083 26267</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:pratappawar8698567744@gmail.com">Lordscapital&finance@company.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        A new age lending company that strives to “make lending Money smarter
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="https://www.instagram.com/_pratap_2.0?igsh=OGQ5ZDc2ODk2ZA=="><img class="insta" src="insta.png" alt=""></a>
+        <a href="https://www.facebook.com/pratap.pawar.712714"><img class="insta" src="facebook.png" alt=""></a>
+        <a href="#"><img class="insta" src="linkedin.png" alt=""></a>
+        <a href="https://x.com/_Pratap_7744?t=NrsdsdA4PejmZ-NP_921UQ&s=09"><img class="insta" src="twitter.png" alt=""></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+</body>
+</html>

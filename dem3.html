@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #rotateImage {
+      transition: transform 1.1s ease-in-out;
+    }
+  </style>
+  <title>Rotate Image</title>
+</head>
+<body>
+
+  <img id="rotateImage" src="cone.png" alt="Rotating Image">
+
+  <script>
+    const rotateImage = document.getElementById('rotateImage');
+    let rotationDegree = 0;
+
+    function rotate() {
+      rotationDegree += 10; // Adjust the rotation speed as needed
+      rotateImage.style.transform = `rotate(${rotationDegree}deg)`;
+      requestAnimationFrame(rotate);
+    }
+
+    rotate(); // Start the rotation
+
+    // Optionally, you can stop the rotation after a specific duration or user interaction
+    // setTimeout(() => cancelAnimationFrame(rotate), 5000); // Stop after 5 seconds
+  </script>
+
+</body>
+</html>
